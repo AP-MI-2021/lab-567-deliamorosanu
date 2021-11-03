@@ -21,7 +21,7 @@ def uiAdaugaAparatment(lista):
 
 
 def uiStergeApartament(lista):
-    nraparatament= input("Dati numarul apartamentului de sters: ")
+    nraparatament=int( input("Dati numarul apartamentului de sters: "))
     return stergeApartament(nraparatament, lista)
 
 
@@ -51,7 +51,7 @@ def runMenu(lista):
             lista = uiStergeApartament(lista)
         elif optiune == "3":
             lista = uiModificaCheltuiala(lista)
-        elif optiune == "a":
+        elif optiune == "4":
             showAll(lista)
         elif optiune == "x":
             break

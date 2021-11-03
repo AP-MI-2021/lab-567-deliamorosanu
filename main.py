@@ -1,9 +1,10 @@
 from Tests.testAll import runAllTests
 from UI.console import runMenu
 
-
 def main():
     runAllTests()
     runMenu([])
 
-main()
+
+if __name__ == '__main__':
+    main()

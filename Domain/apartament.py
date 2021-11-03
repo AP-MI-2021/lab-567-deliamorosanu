@@ -3,7 +3,7 @@ def CreareAsocitatie(id,nrapartament, suma, data, tipul):
        creeaza un dictionar ce reprezinta un apartament
        :param id: string
        :param nrapartament: int
-       :param suma: float
+       :param suma: int
        :param data: string
        :param tipul: string
        :return: dictionarul unui apartament
@@ -44,3 +44,4 @@ def toString(apartament):
         getData(apartament),
         getTipul(apartament)
     )
+

@@ -1,5 +1,5 @@
 from Tests.testCRUD import testAdaugaApartament,testStergeCheltuiala, testModificaCheltuaiala
-from Tests.testDomain import testApartament
+from Tests.testsDomain import testApartament
 
 
 def runAllTests():
