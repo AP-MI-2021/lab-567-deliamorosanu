@@ -44,4 +44,3 @@ def toString(apartament):
         getData(apartament),
         getTipul(apartament)
     )
-

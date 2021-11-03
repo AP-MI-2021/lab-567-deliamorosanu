@@ -1,5 +1,5 @@
 from Domain.apartament import getId, getNrapartament, getSuma, getData, getTipul
-from Logic.CRUD import adaugaApartament, getByNrApartament, stergeApartament, modifcaCheltuiala
+from Logic.CRUD import adaugaApartament, getByNrApartament, stergeApartament, modificaCheltuiala
 
 def testAdaugaApartament():
     lista= []
@@ -31,7 +31,7 @@ def testModificaCheltuaiala():
     lista=[]
     lista= adaugaApartament("1", 1, 200, "25.03.2002", "intretinere",lista)
     lista= adaugaApartament("2", 2, 200, "25.03.2002", "intretinere", lista)
-    lista= modifcaCheltuiala("1", 1, 300, "25.03.2021", "gaz",lista)
+    lista= modificaCheltuiala("1", 1, 300, "25.03.2021", "gaz",lista)
 
     cheltuialaUpdatata=getByNrApartament(1, lista)
     assert getId(cheltuialaUpdatata)== "1"
@@ -49,7 +49,7 @@ def testModificaCheltuaiala():
 
     lista=[]
     lista=adaugaApartament("1", 1, 200, "25.03.2002", "intretinere",lista)
-    lista=modifcaCheltuiala("1", 1, 300, "25.03.2021", "gaz",lista)
+    lista=modificaCheltuiala("1", 1, 300, "25.03.2021", "gaz",lista)
 
     cheltuialaNeupdatata=getByNrApartament(1, lista)
     assert getId(cheltuialaNeupdatata)=="1"
