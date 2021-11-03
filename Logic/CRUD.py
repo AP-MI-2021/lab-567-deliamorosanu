@@ -12,7 +12,7 @@ def adaugaApartament(id,nrapartament, suma, data, tipul,lista):
     :param lista: lista de apartamente
     :return: o lista continand elementele vechi si noul apartament
     '''
-    apartament=  CreareAsocitatie(id,nrapartament, suma, data, tipul)
+    apartament =  CreareAsocitatie(id,nrapartament, suma, data, tipul)
     return lista + [apartament]
 
 def getByNrApartament(nrapartament ,lista):
@@ -34,7 +34,7 @@ def stergeApartament(nrapartament, lista):
     :param lista: lista de apartamente
     :return: Lista apartamentelor fara elementul cu numarul dat
     '''
-    return[apartament for apartament in lista if getByNrApartament(apartament) !=nrapartament]
+    return[apartament for apartament in lista if getByNrApartament(apartament, lista) != nrapartament]
 
 def modificaCheltuiala(id,nrapartament, suma, data, tipul,lista):
     '''

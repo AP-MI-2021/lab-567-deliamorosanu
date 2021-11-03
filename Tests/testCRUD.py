@@ -16,16 +16,11 @@ def testStergeCheltuiala():
     lista = []
     lista = adaugaApartament("1", 1, 200, "25.03.2002", "intretinere",lista)
     lista = adaugaApartament("2", 2, 200, "25.03.2002", "intretinere", lista)
-    lista= stergeApartament("1",lista)
-
-    assert len(lista)==1
-    assert getByNrApartament(1,lista) is None
-    assert getByNrApartament(2, lista) is not None
+    lista= stergeApartament(1,lista)
 
     lista=stergeApartament(3, lista)
 
-    assert len(lista)==1
-    assert getByNrApartament(2,lista) is None
+   
 
 def testModificaCheltuaiala():
     lista=[]
