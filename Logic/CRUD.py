@@ -1,4 +1,4 @@
-from Domain.apartament import CreareAsocitatie, getNrapartament
+from Domain.apartament import CreareAsocitatie, getNrapartament, getId
 
 
 def adaugaApartament(id,nrapartament, suma, data, tipul,lista):
@@ -34,7 +34,7 @@ def stergeApartament(nrapartament, lista):
     :param lista: lista de apartamente
     :return: Lista apartamentelor fara elementul cu numarul dat
     '''
-    return[apartament for apartament in lista if getByNrApartament(apartament, lista) != nrapartament]
+    return[apartament for apartament in lista if getId(apartament) != nrapartament]
 
 def modificaCheltuiala(id,nrapartament, suma, data, tipul,lista):
     '''
@@ -48,9 +48,9 @@ def modificaCheltuiala(id,nrapartament, suma, data, tipul,lista):
     '''
     listaNoua=[]
     for apartament in lista:
-        if getNrapartament(apartament)== nrapartament:
+        if getId(apartament)== nrapartament:
             cheltuialaNoua= CreareAsocitatie(id,nrapartament, suma, data, tipul)
             listaNoua.append(cheltuialaNoua)
         else:
             listaNoua.append(apartament)
-        return listaNoua
+    return listaNoua
