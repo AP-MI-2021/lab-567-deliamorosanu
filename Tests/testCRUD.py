@@ -20,6 +20,7 @@ def testStergeCheltuiala():
     lista = adaugaApartament("2", 2, 200, "25.03.2002", "intretinere", lista)
     lista = stergeApartament(1, lista)
 
+    lista = stergeApartament(3, lista)
 
 
 def testModificaCheltuaiala():
