@@ -32,16 +32,16 @@ def testModificaCheltuaiala():
     cheltuialaUpdatata = getByNrApartament(1, lista)
     assert getId(cheltuialaUpdatata) == "1"
     assert getNrapartament(cheltuialaUpdatata) == 1
-    assert getSuma(cheltuialaUpdatata) == 200
-    assert getData(cheltuialaUpdatata) == "25.03.2002"
-    assert getTipul(cheltuialaUpdatata) == "intretinere"
+    assert getSuma(cheltuialaUpdatata) == 300
+    assert getData(cheltuialaUpdatata) == "25.03.2021"
+    assert getTipul(cheltuialaUpdatata) == "gaz"
 
     cheltuialaNeupdatata = getByNrApartament(2, lista)
     assert getId(cheltuialaNeupdatata) == "2"
     assert getNrapartament(cheltuialaNeupdatata) == 2
     assert getSuma(cheltuialaNeupdatata) == 200
     assert getData(cheltuialaNeupdatata) == "25.03.2002"
-    assert getTipul(cheltuialaUpdatata) == "intretinere"
+    assert getTipul(cheltuialaUpdatata) == "gaz"
 
     lista = []
     lista = adaugaApartament("1", 1, 200, "25.03.2002", "intretinere", lista)
@@ -50,6 +50,6 @@ def testModificaCheltuaiala():
     cheltuialaNeupdatata = getByNrApartament(1, lista)
     assert getId(cheltuialaNeupdatata) == "1"
     assert getNrapartament(cheltuialaNeupdatata) == 1
-    assert getSuma(cheltuialaNeupdatata) == 200
-    assert getData(cheltuialaNeupdatata) == "25.03.2002"
-    assert getTipul(cheltuialaNeupdatata) == "intretinere"
+    assert getSuma(cheltuialaNeupdatata) == 300
+    assert getData(cheltuialaNeupdatata) == "25.03.2021"
+    assert getTipul(cheltuialaNeupdatata) == "gaz"

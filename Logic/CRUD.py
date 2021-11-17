@@ -6,7 +6,7 @@ def adaugaApartament(id,nrapartament, suma, data, tipul,lista):
     adauga un apartament intr-o lista
     :param id: string
     :param nrapartament:int
-    :param suma:float
+    :param suma:int
     :param data:string
     :param tipul:string
     :param lista: lista de apartamente
@@ -48,7 +48,7 @@ def modificaCheltuiala(id,nrapartament, suma, data, tipul,lista):
     '''
     listaNoua=[]
     for apartament in lista:
-        if getId(apartament)== nrapartament:
+        if getNrapartament(apartament)== nrapartament:
             cheltuialaNoua= CreareAsocitatie(id,nrapartament, suma, data, tipul)
             listaNoua.append(cheltuialaNoua)
         else:
