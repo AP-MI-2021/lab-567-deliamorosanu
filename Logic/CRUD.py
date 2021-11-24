@@ -1,4 +1,4 @@
-from Domain.apartament import CreareAsocitatie, getNrapartament, getId
+from Domain.apartamente import CreareAsocitatie, getId
 
 
 def adaugaApartament(id,nrapartament, suma, data, tipul,lista):
@@ -6,7 +6,7 @@ def adaugaApartament(id,nrapartament, suma, data, tipul,lista):
     adauga un apartament intr-o lista
     :param id: string
     :param nrapartament:int
-    :param suma:int
+    :param suma:float
     :param data:string
     :param tipul:string
     :param lista: lista de apartamente
@@ -15,26 +15,26 @@ def adaugaApartament(id,nrapartament, suma, data, tipul,lista):
     apartament =  CreareAsocitatie(id,nrapartament, suma, data, tipul)
     return lista + [apartament]
 
-def getByNrApartament(nrapartament ,lista):
-    '''
-    Gaseste un apartament cu numarul dat dintr-o lista
-    :param nrapartament: int
-    :param lista: lista de prajituri
-    :return: Apartamentul cu numarul dat din lista sau None,daca acesta nu exista
-    '''
+def getById(id, lista):
+    """
+
+    :param id:
+    :param lista:
+    :return:
+    """
     for apartament in lista:
-        if getNrapartament(apartament) == nrapartament:
-            return apartament
+        if getId(apartament)==id:
+            return id
     return None
 
-def stergeApartament(nrapartament, lista):
+def stergeApartament(id, lista):
     '''
     Sterge apartamentul din lista
     :param nrapartament: nr apartamentului sters
     :param lista: lista de apartamente
     :return: Lista apartamentelor fara elementul cu numarul dat
     '''
-    return[apartament for apartament in lista if getNrapartament(apartament) != nrapartament]
+    return[apartament for apartament in lista if getId(apartament) != id]
 
 def modificaCheltuiala(id,nrapartament, suma, data, tipul,lista):
     '''
@@ -48,7 +48,7 @@ def modificaCheltuiala(id,nrapartament, suma, data, tipul,lista):
     '''
     listaNoua=[]
     for apartament in lista:
-        if getNrapartament(apartament)== nrapartament:
+        if getId(apartament)== id:
             cheltuialaNoua= CreareAsocitatie(id,nrapartament, suma, data, tipul)
             listaNoua.append(cheltuialaNoua)
         else:

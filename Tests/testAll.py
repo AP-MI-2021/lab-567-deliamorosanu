@@ -1,9 +1,7 @@
-from Tests.testCRUD import testAdaugaApartament,testStergeCheltuiala, testModificaCheltuaiala
-from Tests.testDomain import testApartament
+from Tests.testCRUD import testStergeCheltuiala, testModificaCheltuaiala
+
 
 
 def runAllTests():
-    testApartament()
-    testAdaugaApartament()
     testStergeCheltuiala()
     testModificaCheltuaiala()

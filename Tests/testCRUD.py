@@ -1,55 +1,32 @@
-from Domain.apartament import getId, getNrapartament, getSuma, getData, getTipul
-from Logic.CRUD import adaugaApartament, getByNrApartament, stergeApartament, modificaCheltuiala
+from Domain.apartamente import CreareAsocitatie, getNrapartament, getSuma, getData, getTipul
+from Logic.CRUD import  stergeApartament, modificaCheltuiala
 
 
-def testAdaugaApartament():
-    lista = []
-    lista = adaugaApartament("1", 1, 200, "25.03.2002", "intretinere", lista)
 
-    assert len(lista) == 1
-    assert getId(getByNrApartament(1, lista)) == "1"
-    assert getNrapartament(getByNrApartament(1, lista)) == 1
-    assert getSuma(getByNrApartament(1, lista)) == 200
-    assert getData(getByNrApartament(1, lista)) == "25.03.2002"
-    assert getTipul(getByNrApartament(1, lista)) == "intretinere"
 
 
 def testStergeCheltuiala():
-    lista = []
-    lista = adaugaApartament("1", 1, 200, "25.03.2002", "intretinere", lista)
-    lista = adaugaApartament("2", 2, 200, "25.03.2002", "intretinere", lista)
-    lista = stergeApartament(1, lista)
+    lista1 = CreareAsocitatie(1, 1, 200, "25.03.2002", "intretinere")
+    lista2 = CreareAsocitatie(2, 2, 200, "25.03.2002", "intretinere")
+    lista=[lista1, lista2]
 
-    lista = stergeApartament(3, lista)
+    assert stergeApartament(2,lista)
+
+
 
 
 def testModificaCheltuaiala():
-    lista = []
-    lista = adaugaApartament("1", 1, 200, "25.03.2002", "intretinere", lista)
-    lista = adaugaApartament("2", 2, 200, "25.03.2002", "intretinere", lista)
-    lista = modificaCheltuiala("1", 1, 300, "25.03.2021", "gaz", lista)
+    lista1 = CreareAsocitatie(1, 1, 200, "25.03.2002", "intretinere")
+    lista2 = CreareAsocitatie(2, 2, 200, "25.03.2002", "intretinere")
+    lista=[lista1, lista2]
 
-    cheltuialaUpdatata = getByNrApartament(1, lista)
-    assert getId(cheltuialaUpdatata) == "1"
-    assert getNrapartament(cheltuialaUpdatata) == 1
-    assert getSuma(cheltuialaUpdatata) == 300
-    assert getData(cheltuialaUpdatata) == "25.03.2021"
-    assert getTipul(cheltuialaUpdatata) == "gaz"
-
-    cheltuialaNeupdatata = getByNrApartament(2, lista)
-    assert getId(cheltuialaNeupdatata) == "2"
-    assert getNrapartament(cheltuialaNeupdatata) == 2
-    assert getSuma(cheltuialaNeupdatata) == 200
-    assert getData(cheltuialaNeupdatata) == "25.03.2002"
-    assert getTipul(cheltuialaUpdatata) == "gaz"
-
-    lista = []
-    lista = adaugaApartament("1", 1, 200, "25.03.2002", "intretinere", lista)
-    lista = modificaCheltuiala("1", 1, 300, "25.03.2021", "gaz", lista)
-
-    cheltuialaNeupdatata = getByNrApartament(1, lista)
-    assert getId(cheltuialaNeupdatata) == "1"
-    assert getNrapartament(cheltuialaNeupdatata) == 1
-    assert getSuma(cheltuialaNeupdatata) == 300
-    assert getData(cheltuialaNeupdatata) == "25.03.2021"
-    assert getTipul(cheltuialaNeupdatata) == "gaz"
+    idnou=1
+    nrapnou= getNrapartament(lista2)
+    sumanou= 3
+    datanoua="12.12.2002"
+    tipnou="intretinere"
+    crearenoua= CreareAsocitatie(1,2,3, "12.12.2002", "intretinere")
+    assert modificaCheltuiala(lista, idnou, getNrapartament(crearenoua), sumanou,datanoua,tipnou)
+    assert getSuma(crearenoua)==sumanou
+    assert getData(crearenoua)==datanoua
+    assert getTipul(crearenoua)==tipnou
